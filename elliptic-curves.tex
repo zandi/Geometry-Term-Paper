@@ -5,3 +5,73 @@ cover proving the given construction on the non-singuler elliptic
 curve creates a group. Should also cover how in practice for crypto
 the identity is chosen as the point at infinity, allowing for 
 much cheaper computation.
+
+Current strategy is to develop this section, then determine
+dependencies for understanding, and stuff those in the
+earlier sections.
+
+\hrulefill
+
+\begin{mydef}
+\label{def:ellipticgroup}
+\emph{Group Law on a Plane Cubic:}
+Suppose $k \subset \mathbb{C}$ is a subfield of $\mathbb{C}$,
+and $F \in k[X,Y,Z]$ is a cubic form defining a non-empty plane
+curve $C:(F=0) \subset \mathbb{P}^2_k$. Additionally, assume that
+$F$ satisfies the following:
+\begin{align*}
+F \text{ is irreducible, (C won't contain a line or conic)}&\tag{a}\\
+\forall P \in C,~\exists! L \subset \mathbb{P}^2_k~s.t.~ P
+\text{ is a repeated zero of } F|_L& \tag{b}\\
+\end{align*}
+
+Now, fix any point $O \in C$ and make the following construction:
+\begin{align*}
+&\text{for } A \in C, \text{ let } \bar{A} \text{ be the third point of intersection of $C$ with $\overleftrightarrow{OA}$} \tag{i}\\
+&\text{for } A, B \in C \text{ let } R \text{ be the third point of intersection of $C$ with $\overleftrightarrow{AB}$}\\
+&\text{ and define $A+B = \bar{R}$}\tag{ii}\\
+\end{align*}
+\end{mydef}
+
+Geometrically, the uniqueness in (b) says that $C$ should be non-singular,
+and we can see that this line $L$ is in fact the tangent line to $C$ at $P$.
+Likewise, (a) prevents somewhat degenerate cases.
+
+As you may have noticed, we've defined an operation on points of this
+cubic curve $C$, so naturally we're curious what sort of structure then
+arises. It turns out that this actually defines an Abelian Group on $C$,
+as we will now prove.
+
+\begin{theorem}
+The above construction in Definition \ref{def:ellipticgroup} defines
+an Abelian Group $(C,+)$ with $O$ as the identity element.
+\end{theorem}
+
+\begin{proof}
+Well, to prove this is an abelian group, we have a few conditions we must satisfy:
+\begin{enumerate}
+\item Well-definedness of the operation and inverses
+\item Existence of an identity element
+\item Existence of unique inverses
+\item Associativity
+\end{enumerate}
+
+Let $P, Q \in C$. Then, we have two simple cases:\\
+
+case 1:  $P \ne Q$. Then $\exists! L \subset \mathbb{P}^2_k$ such that $L = \overleftrightarrow{PQ}$.\\
+
+case 2: $P = Q$. Then, part (b) of the definition gives that $\exists! L \subset \mathbb{P}^2_k$ such that
+$P$ is a repeated root of $F|_L$.
+
+Note, however, that in both cases $F_L$ is a cubic form in 2 variables. $L$ is 
+a line, and thus defined as the set of zeroes of some linear form $l \in k[X,Y,Z]$. As is common, we've
+held $Z$ constant and non-zero to simplify our work, and use the common substitution
+$x=X/Z,~y=Y/Z$. Thus, as $F|_L = F \circ l$, $F|_L$ can only be of 3rd degree,
+and is still homogenous.
+
+So, as $F|_L$ is a 3rd degree form, it has precisely 3 roots, 2 of which
+are known to be $P$ and $Q$. Well, $P \in \mathbb{P}^2_k,~Q\in \mathbb{P}^2_k$
+so $F|_L$ is the product of 3 linear terms from $k[X,Y,Z]$. Thus, the
+third root of $F|_L$ must also be from $\mathbb{P}^2_k$, and thus from $C$.
+
+\end{proof}

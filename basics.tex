@@ -13,10 +13,10 @@ defined as
 \]
 Given this, points in projective space are often denoted $P = [ x_0 : ... : x_n]$,
 with the colons and brackets indicating this is an equivalence class. So then,
-$[ y_0: ... : y_n ] = P = [ x_0 : ... : x_n ]$ if $[ y_0: ... : y_n ] \sim [ x_0 : ... : x_n ]$.
+$[ y_0: ... : y_n ] = P = [ x_0 : ... : x_n ]$ if $(y_0, ..., y_n) \sim (x_0, ..., x_n)$.
 \end{mydef}
 The definition is abstract to purposely highlight the fact that, 
-given a vector space $k^{n}$ we can create a projective space.
+given a field $k$ we can create a projective space.
 Effectively, the projective space is the set of all lines in 
 $k^n$ through the origin. This is also why the projective space
 has one fewer dimension than its corresponding vector space.
@@ -45,3 +45,15 @@ case of two parallel lines, they will never intersect in $z=1$, but
 the great circles they're mapped to will intersect on the equator of 
 the hemisphere.
 
+\begin{mydef}
+A function $f(x)$ is \emph{Homogenous of Degree n} if, for some 
+constant $\lambda$, we have $f(\lambda x) = \lambda ^n f(x)$.
+If $f$ is a homogenous polynomial of degree n, it is known as a \emph{form of degree n}.
+\end{mydef}
+
+Homogenous functions are particularly useful when considering their
+sets of zeroes in projective space. If $f$ is homogenous of degree
+n, and some point $x = (x_0, ..., x_n)$ is a zero of $f$, then
+$f(\lambda x) = \lambda^n f(x) = \lambda^n 0 = 0$. Thus, we can say
+that, if $f$ is homogenous, then can indeed have zeroes of $f$ in $\mathbb{P}^n_k$,
+assuming k is algebraically closed.
