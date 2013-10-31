@@ -53,9 +53,11 @@ Well, to prove this is an abelian group, we have a few conditions we must satisf
 \item Well-definedness of the operation and inverses
 \item Existence of an identity element
 \item Existence of unique inverses
+\item Commutativity
 \item Associativity
 \end{enumerate}
 
+\emph{Well-Definedness:}\\
 Let $P, Q \in C$. Then, we have two simple cases:\\
 
 case 1:  $P \ne Q$. Then $\exists! L \subset \mathbb{P}^2_k$ such that $L = \overleftrightarrow{PQ}$.\\
@@ -63,15 +65,29 @@ case 1:  $P \ne Q$. Then $\exists! L \subset \mathbb{P}^2_k$ such that $L = \ove
 case 2: $P = Q$. Then, part (b) of the definition gives that $\exists! L \subset \mathbb{P}^2_k$ such that
 $P$ is a repeated root of $F|_L$.
 
-Note, however, that in both cases $F_L$ is a cubic form in 2 variables. $L$ is 
+Note, however, that in both cases $F|_L$ is a cubic form in 2 variables. $L$ is 
 a line, and thus defined as the set of zeroes of some linear form $l \in k[X,Y,Z]$. As is common, we've
 held $Z$ constant and non-zero to simplify our work, and use the common substitution
 $x=X/Z,~y=Y/Z$. Thus, as $F|_L = F \circ l$, $F|_L$ can only be of 3rd degree,
-and is still homogenous.
+and is still homogenous. ($F(l(\lambda x)) = F(\lambda l(x)) = \lambda^3 F(l(x))$).
 
 So, as $F|_L$ is a 3rd degree form, it has precisely 3 roots, 2 of which
-are known to be $P$ and $Q$. Well, $P \in \mathbb{P}^2_k,~Q\in \mathbb{P}^2_k$
+are known to be $P$ and $Q$. Well, $P \in \mathbb{P}^2_k,~Q\in \mathbb{P}^2_k$,
 so $F|_L$ is the product of 3 linear terms from $k[X,Y,Z]$. Thus, the
 third root of $F|_L$ must also be from $\mathbb{P}^2_k$, and thus from $C$.
+
+So, given any two points on $C$, the line they determine intersects $C$ at some unique third point.
+Thus our construction, which relies on such a third point existing, is well defined. That is,
+Given any $A \in C,~\bar{A}$ is a unique element of $C$, and given any $A, B \in C,~A+B$ 
+is a unique point of $C$.\\
+
+\emph{Identity:}\\
+Let $A \in C$ be some arbitrary point of $C$, and consider $O+A$.
+Well, by our construction, we first find the third point
+of intersection of $\overleftrightarrow{OA}$ with $C$, which by (i)
+is $\bar{A}$. From here, to find $O+A$ we must now find the
+third point of intersection of $\overleftrightarrow{O\bar{A}}$ with $C$. However, note
+that $O,~A,~\bar{A}$ are all collinear. Thus, this third point
+of intersection of $\overleftrightarrow{O\bar{A}}$ with $C$ is $A$. Hence, $O+A=A,~\forall A \in C$.
 
 \end{proof}
