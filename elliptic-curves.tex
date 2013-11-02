@@ -17,34 +17,34 @@ earlier sections.
 \emph{Group Law on a Plane Cubic:}
 Suppose $k \subset \mathbb{C}$ is a subfield of $\mathbb{C}$,
 and $F \in k[X,Y,Z]$ is a cubic form defining a non-empty plane
-curve $C:(F=0) \subset \mathbb{P}^2_k$. Additionally, assume that
+curve $\mathfrak{C}:(F=0) \subset \mathbb{P}^2_k$. Additionally, assume that
 $F$ satisfies the following:
 \begin{align*}
-F \text{ is irreducible, (C won't contain a line or conic)}&\tag{a}\\
-\forall P \in C,~\exists! L \subset \mathbb{P}^2_k~s.t.~ P
+F \text{ is irreducible, so $\mathfrak{C}$ won't contain a line or conic}&\tag{a}\\
+\forall P \in \mathfrak{C},~\exists!~line~L \subset \mathbb{P}^2_k~s.t.~ P
 \text{ is a repeated zero of } F|_L& \tag{b}\\
 \end{align*}
 
-Now, fix any point $O \in C$ and make the following construction:
+Now, fix any point $O \in \mathfrak{C}$ and make the following construction:
 \begin{align*}
-&\text{for } A \in C, \text{ let } \bar{A} \text{ be the third point of intersection of $C$ with $\overleftrightarrow{OA}$} \tag{i}\\
-&\text{for } A, B \in C \text{ let } R \text{ be the third point of intersection of $C$ with $\overleftrightarrow{AB}$}\\
+&\text{for } A \in \mathfrak{C}, \text{ let } \bar{A} \text{ be the third point of intersection of $\mathfrak{C}$ with $\overleftrightarrow{OA}$} \tag{i}\\
+&\text{for } A, B \in \mathfrak{C} \text{ let } R \text{ be the third point of intersection of $\mathfrak{C}$ with $\overleftrightarrow{AB}$}\\
 &\text{ and define $A+B = \bar{R}$}\tag{ii}\\
 \end{align*}
 \end{mydef}
 
-Geometrically, the uniqueness in (b) says that $C$ should be non-singular,
-and we can see that this line $L$ is in fact the tangent line to $C$ at $P$.
+Geometrically, the uniqueness in (b) says that $\mathfrak{C}$ should be non-singular,
+and we can see that this line $L$ is in fact the tangent line to $\mathfrak{C}$ at $P$.
 Likewise, (a) prevents somewhat degenerate cases.
 
 As you may have noticed, we've defined an operation on points of this
-cubic curve $C$, so naturally we're curious what sort of structure then
-arises. It turns out that this actually defines an Abelian Group on $C$,
+cubic curve $\mathfrak{C}$, so naturally we're curious what sort of structure then
+arises. It turns out that this actually defines an Abelian Group on $\mathfrak{C}$,
 as we will now prove.
 
 \begin{theorem}
-The above construction in Definition \ref{def:ellipticgroup} defines
-an Abelian Group $(C,+)$ with $O$ as the identity element.
+The above construction (Definition \ref{def:ellipticgroup}) defines
+an Abelian Group $(\mathfrak{C},+)$ with $O$ as the identity element.
 \end{theorem}
 
 \begin{proof}
@@ -58,36 +58,70 @@ Well, to prove this is an abelian group, we have a few conditions we must satisf
 \end{enumerate}
 
 \emph{Well-Definedness:}\\
-Let $P, Q \in C$. Then, we have two simple cases:\\
+Let $P, Q \in \mathfrak{C}$. Then, we have two simple cases:\\
 
 case 1:  $P \ne Q$. Then $\exists! L \subset \mathbb{P}^2_k$ such that $L = \overleftrightarrow{PQ}$.\\
 
 case 2: $P = Q$. Then, part (b) of the definition gives that $\exists! L \subset \mathbb{P}^2_k$ such that
-$P$ is a repeated root of $F|_L$.
+$P$ is a repeated root of $F|_L$.\\
 
-Note, however, that in both cases $F|_L$ is a cubic form in 2 variables. $L$ is 
-a line, and thus defined as the set of zeroes of some linear form $l \in k[X,Y,Z]$. As is common, we've
-held $Z$ constant and non-zero to simplify our work, and use the common substitution
-$x=X/Z,~y=Y/Z$. Thus, as $F|_L = F \circ l$, $F|_L$ can only be of 3rd degree,
-and is still homogenous. ($F(l(\lambda x)) = F(\lambda l(x)) = \lambda^3 F(l(x))$).
-
+Note, however, that in both cases $F|_L$ is a cubic form in 2 variables.
 So, as $F|_L$ is a 3rd degree form, it has precisely 3 roots, 2 of which
-are known to be $P$ and $Q$. Well, $P \in \mathbb{P}^2_k,~Q\in \mathbb{P}^2_k$,
+are the $k$-valued points $P$ and $Q$. Well, $P \in \mathbb{P}^2_k,~Q\in \mathbb{P}^2_k$,
 so $F|_L$ is the product of 3 linear terms from $k[X,Y,Z]$. Thus, the
-third root of $F|_L$ must also be from $\mathbb{P}^2_k$, and thus from $C$.
+third root of $F|_L$ is certainly defined, and must also be from $\mathbb{P}^2_k$, and of course from $\mathfrak{C}$.
 
-So, given any two points on $C$, the line they determine intersects $C$ at some unique third point.
+So, given any two points on $\mathfrak{C}$, the line they determine intersects $\mathfrak{C}$ at some third point.
 Thus our construction, which relies on such a third point existing, is well defined. That is,
-Given any $A \in C,~\bar{A}$ is a unique element of $C$, and given any $A, B \in C,~A+B$ 
-is a unique point of $C$.\\
+Given any $A \in \mathfrak{C},~\bar{A}$ is a unique element of $\mathfrak{C}$, and given any $A, B \in \mathfrak{C},~A+B$ 
+is a unique point of $\mathfrak{C}$.\\
+
+\emph{Commutativity:}\\
+Well, need to show that $A+B = B+A$. Miles Reid chooses to ``leave this to the reader", 
+and likewise we won't elaborate on this. Simply note that $\overleftrightarrow{AB} = \overleftrightarrow{BA}$,
+so they share the same 3rd point of intersection with $\mathfrak{C}$.\\
 
 \emph{Identity:}\\
-Let $A \in C$ be some arbitrary point of $C$, and consider $O+A$.
+Let $A \in \mathfrak{C}$ be some arbitrary point of $\mathfrak{C}$, and consider $O+A$.
 Well, by our construction, we first find the third point
-of intersection of $\overleftrightarrow{OA}$ with $C$, which by (i)
+of intersection of $\overleftrightarrow{OA}$ with $\mathfrak{C}$, which by (i)
 is $\bar{A}$. From here, to find $O+A$ we must now find the
-third point of intersection of $\overleftrightarrow{O\bar{A}}$ with $C$. However, note
+third point of intersection of $\overleftrightarrow{O\bar{A}}$ with $\mathfrak{C}$. However, note
 that $O,~A,~\bar{A}$ are all collinear. Thus, this third point
-of intersection of $\overleftrightarrow{O\bar{A}}$ with $C$ is $A$. Hence, $O+A=A,~\forall A \in C$.
+of intersection of $\overleftrightarrow{O\bar{A}}$ with $\mathfrak{C}$ is $A$. Hence, $O+A=A,~\forall A \in \mathfrak{C}$.\\
 
+\emph{Inverses:}\\
+Let $L$ be the line tanget to $\mathfrak{C}$ at $O$. That is, $L$ is the unique line s.t.
+$F|_L$ has $O$ as a repeated zero. Now, let $\bar{O}$ be the 3rd root of $F|_L$.
+Now, given any point $A \in \mathfrak{C}$, we can see that the third point of intersection
+of $\overleftrightarrow{A\bar{O}}$ with $\mathfrak{C}$ is the inverse of $A$.
+
+Call this third point of intersection $A'$. Now, consider $A+A'$. By definition,
+$A,~A',~\bar{O}$ are all collinear, so the third point of intersection of 
+$\overleftrightarrow{AA'}$ with $\mathfrak{C}$ is $\bar{O}$. Now, by how we defined
+$\bar{O}$, we know that the third point of intersection of $\mathfrak{C}$ with $\overleftrightarrow{O\bar{O}}$
+is $O$, as $O$ is a repeated root of this line. Thus, $A+A' = O$, so in the
+future we'll refer to such an $A'$ as $A^{-1}$.
+
+Finally, note that as $A^{-1}$ was picked as the third point of intersection of
+$\mathfrak{C}$ with $\overleftrightarrow{A\bar{O}}$, it is well-defined.\\
+
+\emph{Associativity:}\\
+Associativity is by far the most difficult part of this proof. We'll first prove 
+Associativity for one case, and then reduce the general case to this special case.\\
+
+Suppose that $A,B,C \in \mathfrak{C}$. We want to show that $(A+B)+C = A+(B+C)$.
+Well, in the construction of $(A+B)+C$ we use the 4 lines
+\[
+L_1: \overleftrightarrow{ABR},~L_2: \overleftrightarrow{RO\bar{R}},~L_3: \overleftrightarrow{C\bar{R}S},~L_4: \overleftrightarrow{SO\bar{S}}
+\]
+Likewise, the construction of $A+(B+C)$ involves
+\[
+M_1: \overleftrightarrow{BCQ},~M_2: \overleftrightarrow{QO\bar{Q}},~M_3: \overleftrightarrow{A\bar{Q}S'},~M_4: \overleftrightarrow{S'O\bar{S'}}
+\]
+
+Clearly, $(A+B)+C = A+(B+C) \iff \bar{S}=\bar{S'} \iff S=S'$. We'll prove $S=S'$ by inspecting the two cubics
+\[
+	D_1 = L_1 + M_2 + L_3 \text{ and } D_2 = M_1 + L_2 + M_3
+\]
 \end{proof}
