@@ -2,3 +2,37 @@
 Bezout's theorem will be important later, but we
 probably won't be able to fully prove it here. However,
 the book does prove the limited cases that we'll most rely on.
+
+\begin{theorem}
+\emph{Bezout's Theorem}:\\
+
+If $C$ and $D$ are plane curves of degree $m$ and $n$ (respectively)
+then $C \cap D$ contains precisely $mn$ points, provided:
+\begin{align*}
+&\text{The field we're working over is algebraically closed} \tag{i}\\
+&\text{Points of intersection are counted with multiplicity} \tag{ii}\\
+&\text{We work in $\mathbb{P}^2_k$ to account for points at infinity} \tag{iii}\\
+\end{align*}
+\end{theorem}
+
+Instead of proving the general theorem, we'll only cover a special 
+case of particular importance to us; intersections involving
+lines and conics.
+
+\begin{theorem}
+Let $L \subset \mathbb{P}^2_k$ be a line (respectively, $C \subset \mathbb{P}^2_K$ a non-degenerate conic)
+and $D \subset \mathbb{P}^2_k$ a curve defined by $D:(G_d(X,Y,Z)=0)$ where $G$ is
+a form of degree $d$ in the 3 variables $X,Y,Z$. Also, assume that $L \not\subset D$ (resp. $C \not\subset D$).
+Then
+\[
+|L \cap D| \le d
+\]
+and respectively
+\[
+|C \cap D| \le 2d
+\]
+And in fact, once accounting for multiplicity, points at infinity, and if $k$ is algebraically
+closed, we have equality.
+\end{theorem}
+
+
