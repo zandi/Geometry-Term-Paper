@@ -124,4 +124,87 @@ Clearly, $(A+B)+C = A+(B+C) \iff \bar{S}=\bar{S'} \iff S=S'$. We'll prove $S=S'$
 \[
 	D_1 = L_1 + M_2 + L_3 \text{ and } D_2 = M_1 + L_2 + M_3
 \]
+TODO: \emph{clearly} define what this ``$+$" operation on curves is. are we
+taking the product of their defining polynomials? I suspect so, but
+this definition raises other concerns on the applicability of other theorems,
+such as ``if two cubics intersect 8 of 9 common points they both intersect the 9th".
+study this later...\\
+
+Thus, by construction we have
+\[
+	\mathfrak{C} \cap D_1 = \{A, B, C, O, R, \bar{R}, Q, \bar{Q}, S\}
+\]
+and
+\[
+	\mathfrak{C} \cap D_2 = \{A, B, C, O, R, \bar{R}, Q, \bar{Q}, S'\}
+\]
+
+Now, assuming all 9 points of $\mathfrak{C} \cap D_1$ are distinct, then $\mathfrak{C}$ and $D_1$
+satisfy the conditions of proposition 2.7 (TODO: add prop. 2.7 from book to earlier sections),
+so $D_2$ must pass through the 9th point $S$, which is only possible if $S'=S$.
+Hence, $\bar{S} = \bar{S'}$ and, so long as our construction involves 9 distinct points,
+$+$ is Associative.
+
+Now, to extend to the more general case of points $A,B,C \in \mathfrak{C}$
+which don't necessarily involve only distinct points in the construction
+of $(A+B)+C$ or $A+(B+C)$. We'll make use of some concepts from calculus here.
+
+First, some useful lemmas:
+\begin{lemma}
+\label{lem:cubicgroupcts}
+$+$ is a continuous function. Thus, as the composition of continuous functions, both
+\[
+(A,B,C) \mapsto (A+B)+C
+\]
+\[
+(A,B,C) \mapsto A+(B+C)
+\]
+are continuous
+\end{lemma}
+
+\begin{lemma}
+\label{lem:cubicgroupsequence}
+$\forall A,B,C \in \mathfrak{C}, \exists A',B',C' \in \mathfrak{C}$ arbitrarily near $A,B,C$
+such that the 9 points $\{A,B,C,O,R,\bar{R},Q,\bar{Q},S\}$ are distinct.
+
+Specifically, there exist sequences $(A_n), (B_n), (C_n)$ s.t.
+\[
+A_n \to A,~B_n \to B,~C_n \to C \text{ as } n \to \infty.
+\]
+\end{lemma}
+
+Thus, $\forall n \in \mathbb{N}$ the previous limited proof of associativity gives
+that 
+\[
+	(A_n+B_n)+C_n = A_n+(B_n+C_n) \tag{*}
+\]
+Now, by the continuity in Lemma \ref{lem:cubicgroupcts},
+we have the following limits using the sequences from Lemma \ref{lem:cubicgroupsequence}:
+\[
+	\lim_{n \to \infty} (A_n + B_n) + C_n = (A+B)+C
+\]
+\[
+	\lim_{n \to \infty} A_n + (B_n + C_n) = A+(B+C)
+\]
+
+But, by the above noted equality (*) gained from Lemma \ref{lem:cubicgroupsequence},
+we know that 
+\[
+	\lim_{n \to \infty} (A_n + B_n) + C_n = \lim_{n \to \infty} A_n + (B_n + C_n) 
+\]
+
+Thus, by uniqueness of limits
+\[
+	(A+B)+C = A+(B+C)
+\]
+
+
+More specifically, we can see from Lemma \ref{lem:cubicgroupsequence} that the set of
+such points $(A,B,C)$ where the 9 involved points of the construction are distinct
+is in fact dense in $\mathfrak{C} \times \mathfrak{C} \times \mathfrak{C}$. Thus,
+as the two functions from Lemma \ref{lem:cubicgroupcts} agree on this
+dense set, they agree everywhere on $\mathfrak{C} \times \mathfrak{C} \times \mathfrak{C}$,
+giving us Associativity $\forall A,B,C \in \mathfrak{C}$.\\
+
+Therefore, $(\mathfrak{C},+)$ is an Abelian Group.
 \end{proof}
