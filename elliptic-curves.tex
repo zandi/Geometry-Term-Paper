@@ -208,3 +208,25 @@ giving us Associativity $\forall A,B,C \in \mathfrak{C}$.\\
 
 Therefore, $(\mathfrak{C},+)$ is an Abelian Group.
 \end{proof}
+
+It should be noted that the fact the curve is cubic is quite important.
+This allows us to have precisely 3 points of intersection when intersecting
+our curve with a line, letting us define a relatively natural
+operation based on this. On the contrary, a quartic curve would have 4
+points of intersection with a line, and an increasing number of points
+if we were to consider intersections with conics and cubics, so 
+it's even less clear how we would define an operation here to get a group.
+Likewise, intersections of a line with another line are so trivial
+it's hard to imagine such an interesting structure arising.
+
+Also note curves of the form $y^2 = x^3 + ax + b$ fulfill the requirements
+of our theorem, and are symmetric about the x-axis. In practice,
+the identity $O$ is taken to be the ideal point at infinity (since we are
+really in $\mathbb{P}^2_k \subset \mathbb{P}^2_\mathbb{C}$), allowing
+for all vertical lines to intersect $O$. As our curve tends towards
+infinity, it also intersects $O$, so everything is still well-defined.
+The benefit of this approach is that calculating inverses is trivial:
+$A=(x,y) \implies A^{-1} = (x, -y)$. Once we pair this with a field $k$
+with desirable number-theoretic properties, we enter the realm of
+cryptography using elliptic curves, and travel far outside the
+scope of this short paper.
