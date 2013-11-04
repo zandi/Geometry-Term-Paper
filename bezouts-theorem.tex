@@ -35,4 +35,39 @@ And in fact, once accounting for multiplicity, points at infinity, and if $k$ is
 closed, we have equality.
 \end{theorem}
 
-
+\begin{proof}
+The line $L$ is defined as the set of zeroes of some linear form $\lambda$; $L:(\lambda=0)$
+in $X,Y,Z$. Well, as a line we can certainly paramaterize $\lambda$ using 
+\[
+X=a(U,V),~Y=b(U,V),~Z=c(U,V)
+\]
+where $a, b, c$ are linear forms of $U,V$. As an example, if $\lambda = \alpha X + \beta Y + \gamma Z$
+with $\gamma \ne 0$ then we could paramaterize $L$ as
+\[
+X = U,~Y=V,~Z=-\frac{\alpha}{\gamma}U - \frac{\beta}{\gamma}V
+\]
+by simply noting that $\lambda = 0 \implies 0 = \alpha X + \beta Y + \gamma Z$ and solving
+for $Z$. If $\gamma = 0$ we have the simpler case of $0 = \alpha X + \beta Y$.
+Similarly, a non-degenerate conic can be parameterized as follows
+\[
+X=a(U,V),~Y=b(U,V),~Z=c(U,V)
+\]
+where $a,b,c$ are quadratic forms in $U,V$. This is because $C$ is a projective
+transformation of $XZ=Y^2$, which is parametrically $(X,Y,Z) = (U^2,UV,V^2)$.
+Thus, $C$ is given by 
+\[
+\begin{bmatrix}
+X\\
+Y\\
+Z
+\end{bmatrix}
+=
+M
+\begin{bmatrix}
+U^2\\
+UV\\
+V^2
+\end{bmatrix}
+\]
+Where $M$ is a non-singular 3x3 matrix.
+\end{proof}
