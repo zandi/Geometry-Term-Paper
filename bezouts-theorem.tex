@@ -4,6 +4,47 @@ probably won't be able to fully prove it here. However,
 the book does prove the limited cases that we'll most rely on.
 
 \begin{theorem}
+\emph{Homogenous Forms in 2 Variables}:\\
+
+Let $F(U,V)$ be a non-zero homogenous polynomial of degree $d$ in $U,V$,
+with coefficients from a fixed field $k$. Then, we call $F$ a \emph{form of degree d},
+and can see that
+\[
+F(U,V) = a_dU^d+a_{d-1}U^{d-1}V + \dots + a_iU^iV^{d-i}+\dots+a_0V^d
+\]
+Now, if we apply $u=U/V$ and hold $V=1$ we have an associated non-homogenous polynomial
+\[
+f(u) = a_du^d + a_{d-1}u^{d-1} + \dots + a_iu^i + \dots + a_0
+\]
+And so, for some $\alpha \in k$
+\[ %a for k-valued root, alpha for... something in P^1?
+f(a) = 0 \iff (u-a)|f(u) \iff (U-\alpha V) | F(U,V)
+\]
+As $f$ must contain at least a linear term whose root is $a$, and
+thus applying $u=U/V$, we get $(U/V - a) = (U - \alpha V)$. Now, 
+holding $V=1$ like earlier, we see that
+\[
+(U-\alpha V) | F(U,V) \iff F(\alpha,1) = 1
+\]
+So, zeroes of the simpler polynomial $f$ correspond to zeroes of $F$
+on $\mathbb{P}^1_k$ so long as $V \ne 0$. However, if $F$ had a root
+of the form $(\beta,0)$ then certainly by homogeneity $F$ also has
+$(1,0)$ as a root, giving:
+\[
+F(1,0) = 0 \iff a_d \cdot 1 + a_{d-1} \cdot 1 \cdot 0 + \dots + a_0 \cdot 0 = 0 \iff a_d = 0
+\]
+which would force $deg f < d$, as then the highest power of $U$ in $F$ is strictly
+less than $d$. In this situation, $(1,0)$ is effectively a ``root at $\infty$" in $\mathbb{P}^1_k$.
+
+Now, we can define the \emph{multiplicity} of a zero of $F$ as:
+\begin{align*}
+&\text{The multiplicity of $f$ at the corresponding $a \in k$}\\
+&\text{$d - deg f$ if $(1,0)$ is the zero}
+\end{align*}
+
+\end{theorem}
+
+\begin{theorem}
 \emph{Bezout's Theorem}:\\
 
 If $C$ and $D$ are plane curves of degree $m$ and $n$ (respectively)
@@ -37,7 +78,7 @@ closed, we have equality.
 
 \begin{proof}
 The line $L$ is defined as the set of zeroes of some linear form $\lambda$; $L:(\lambda=0)$
-in $X,Y,Z$. Well, as a line we can certainly paramaterize $\lambda$ using 
+in $X,Y,Z$. Well, as a line we can certainly paramaterize $L$ using 
 \[
 X=a(U,V),~Y=b(U,V),~Z=c(U,V)
 \]
@@ -69,5 +110,14 @@ UV\\
 V^2
 \end{bmatrix}
 \]
-Where $M$ is a non-singular 3x3 matrix.
+Where $M$ is a non-singular 3x3 matrix. (JUSTIFY THIS!!!)
+
+So, in order to find the points of intersection of $L$ (resp. $C$) with $D$,
+we simply need to evaluate $G_d|_L=0$ (resp. $G_d|_C=0$) using the above parameterizations.
+Explicitly, to find the points of $L \cap D$ we want to find the solutions to
+\[
+	G_d(a(U,V),b(U,V),c(U,V)) = 0
+\]
+Now we can see that, as $G_d$ is a form of degree $d$ in $X,Y,Z$, and $a,b,c$ are forms
+of degree 1 (resp. 2) in $U,V$ then $G_d|_L$ is of degree $d$ (resp. 2d) in $U,V$.
 \end{proof}
