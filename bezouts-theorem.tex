@@ -16,7 +16,16 @@ Now, if we apply $u=U/V$ and hold $V=1$ we have an associated non-homogenous pol
 \[
 f(u) = a_du^d + a_{d-1}u^{d-1} + \dots + a_iu^i + \dots + a_0
 \]
-And so, for some $\alpha \in k$
+\end{theorem}
+
+
+This may not seem incredibly important, but this observation
+allows us to explore the zeroes of forms by examining the zeroes
+of relatively simpler polynomials. Similar constructions can be made
+for forms in more variables, but this two-variable form gives us a relatively
+simple example to explore.\\
+
+Exploring this further, for some $\alpha \in k$
 \[ %a for k-valued root, alpha for... something in P^1?
 f(a) = 0 \iff (u-a)|f(u) \iff (U-\alpha V) | F(U,V)
 \]
@@ -38,11 +47,20 @@ less than $d$. In this situation, $(1,0)$ is effectively a ``root at $\infty$" i
 
 Now, we can define the \emph{multiplicity} of a zero of $F$ as:
 \begin{align*}
-&\text{The multiplicity of $f$ at the corresponding $a \in k$}\\
-&\text{$d - deg f$ if $(1,0)$ is the zero}
+&\text{The multiplicity of $f$ at the corresponding $a \in k$} \tag{i}\\
+&\text{$d - deg f$ if $(1,0)$ is the zero} \tag{ii}
 \end{align*}
+Equivalently, the multiplicity of a zero of $F$ at a point $(a,1)$
+is the greatest power of $(U - \alpha V)$ dividing $F$, and at $(1,0)$
+is the greatest power of $V$ dividing $F$.
 
-\end{theorem}
+So, we have an interesting relationship between forms of 2 variables and their
+related polynomials in a single variable. Assuming $k$ is algebraically closed, we are in fact
+bridging the zeroes of $F$ in $\mathbb{P}^1_k$ with the zeroes of $f$
+in $k$ by examining the restriction of $F$ to the line $V=1$.
+Later we'll see a similar approach where third-degree forms with roots
+$(X,Y,Z) \in \mathbb{P}^2_k$ are examined by restricting $F$ to the
+$Z=1$ plane, giving us some simpler $f$ with roots in $k^2$.
 
 \begin{theorem}
 \emph{Bezout's Theorem}:\\
