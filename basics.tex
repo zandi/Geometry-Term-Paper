@@ -86,3 +86,30 @@ $(X,Y,Z) \in \mathbb{P}^2$ can help with this.
 
 Of particular importance is that, when in $\mathbb{P}^2_k$, all lines will have
 some linear form whose set of roots determines the line.
+
+\begin{mydef}
+\[
+S_d = \{\text{ forms of degree d in $(X, Y, Z)$}\}
+\]
+So, any element $F$ of $S_d$ can be written in a unique way as:
+\[
+F = \Sigma _{\substack{i+j+k'=d \\ i,j,k' > 0}}~a_{i,j,k'} X^i Y^j Z^{k'},~a_{i,j,k'} \in k
+\]
+\end{mydef}
+So, $S_d$ has a basis of 
+%improve formatting later...
+\begin{align*}
+\{&X^d, X^{d-1}Y, X^{d-2}Y^2, \dots\\
+&X^{d-1}Z, X^{d-2}YZ, X^{d-3}Y^2Z, \dots\\
+&X^{d-2}Z^2, X^{d-3}YZ^2, X^{d-4}Y^2Z^2, \dots\}
+\end{align*}
+Also, it can be seen that $dim~S_d = {d+2 \choose 2}$. On its own
+$S_d$ isn't incredibly interesting, but we can make use of it when
+reasoning about certain sets of geometric objects.
+
+\begin{mydef}
+for $p_1, \dots, p_n \in \mathbb{P}^2$, let
+\[
+	S_d(p_1, \dots, p_n) = \{ F \in S_d :~F(p_i) = 0,~i=1,\dots,n\}
+\]
+\end{mydef}
