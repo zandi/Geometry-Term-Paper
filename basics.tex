@@ -84,3 +84,30 @@ for $p_1, \dots, p_n \in \mathbb{P}^2$, let
 	S_d(p_1, \dots, p_n) = \{ F \in S_d :~F(p_i) = 0,~i=1,\dots,n\}
 \]
 \end{mydef}
+
+\begin{mydef}
+A \emph{line} in $\mathbb{P}^2$ is defined as the points for which
+some linear form $aX + bY + cZ$ is zero. This is notated
+\[
+L:(aX+bY+cZ=0)
+\]
+\end{mydef}
+
+\begin{mydef}
+A \emph{Conic} in $\mathbb{R}^2$ is a plane curve given by the quadratic
+equation
+\[
+q(x,y) = ax^2 + bxy + cy^2 + dx + ey + f = 0
+\]
+\end{mydef}
+
+To ``adapt" this definition into projective space $\mathbb{P}^2$, we simply
+note that the inhomogenous polynomial $q$ has an associated
+homogenous polynomial 
+\[
+Q(X,Y,Z) = aX^2 + bXY + cY^2 + dXZ + eYZ + fZ^2
+\]
+Miles Reid recommends thinking about this as a bijection $q \leftrightarrow Q$ by
+\[
+q(x,y) = Q(\frac{X}{Z},\frac{Y}{Z})
+\]
