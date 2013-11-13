@@ -18,7 +18,7 @@ Let $k$ be an infinite field, and let $p_1, \dots, p_8 \in \mathbb{P}^2_k$
 be distinct points. Additionally, suppose that no 4 of $p_1, \dots, p_8$ are
 collinear, and no 7 lie on a non-degenerate conic (no 7 are con-conic). Then:
 \[
-	dim~S_3(p_1, \dots, p_8) = 2
+	\dim S_3(p_1, \dots, p_8) = 2
 \]
 That is, the set of all conics which pass through $p_1, \dots, p_8$ can in
 fact be considered a vector space, with a basis of the defining equations $F_1, F_2$
@@ -49,14 +49,20 @@ a contradiction. Thus, no 4 points of intersection can be collinear.
 
 Likewise, no 7 points can be con-conic. Bezout's theorem forces precisely
 $3 \cdot 2 = 6$ points of intersection. Thus, if 7 points lied on a common
-conic $D$ then $D \subset C_1 \cap C_2$, thus $C_1 \cap C_2$ has more than
-9 points, a contadiction.
+conic $E$ then $E \subset C_1 \cap C_2$, thus $C_1 \cap C_2$ has more than
+9 points, a contradiction.
 
 Thus, WLOG $\{p_1, \dots, p_8\}$ satisfy the hypotheses of theorem \ref{thm:cubicintersectionpoints},
 so we now know that 
 \[
-	dim~S_3(p_1, \dots, p_8) = 2
+	\dim S_3(p_1, \dots, p_8) = 2
 \]
+So, the defining equations $F_1, F_2$ of $C_1, C_2$ form a basis of 
+$S_3(p_1, \dots, p_8)$. Thus, the cubic $D$ which passes through
+$\{p_1, \dots, p_8\}$ is defined by some equation $G$ ($D:(G=0)$),
+thus $G \in S_3(p_1, \dots, p_8)$ so $G = \alpha F_1 + \beta F_2$.
+But now, we know that $F_1(p_9) = 0 = F_2(p_9)$, thus
+$G(p_9) = \alpha \cdot 0 + \beta \cdot 0 = 0$, so $D$ passes through $p_9$.
 \end{proof}
 
 
