@@ -111,3 +111,39 @@ Miles Reid recommends thinking about this as a bijection $q \leftrightarrow Q$ b
 \[
 q(x,y) = Q(\frac{X}{Z},\frac{Y}{Z})
 \]
+
+\begin{mydef}
+A \emph{Projective Transformation} on $\mathbb{P}^2_\mathbb{R}$ is a
+transformation of the form
+\[
+T(x) = Mx
+\]
+where $x$ is some point in $\mathbb{P}^2_\mathbb{R}$ in homogenous coordinates in vector form,
+and $M$ is a non-singular $3\times3$ matrix.
+\end{mydef}
+
+More explicitly, if we restrict ourselves to $\mathbb{R}^2 \subset \mathbb{P}^2_\mathbb{R}$
+(eg: the $Z=1$ plane) then we can think of this as
+\[
+\begin{bmatrix}
+x\\
+y
+\end{bmatrix} =
+(A\begin{bmatrix}
+x\\
+y
+\end{bmatrix} + B) / (cx+dy+e)
+\]
+when $cx+dy+e \ne 0$. Thus, we can define the matrix $M$ as follows:
+\[
+M= \left[\begin{array}{cc|c}
+\multicolumn{2}{c|}{A} & B\\
+\hline
+c & d & e
+\end{array}\right]
+\]
+
+Interestingly, this is a somewhat subtle way of demonstrating that certain
+non-linear transformations (projective and affine translation) in $n$
+dimensions can actually be achieved using linear transformations in $n+1$ dimensions.
+
