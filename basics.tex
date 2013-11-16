@@ -109,8 +109,9 @@ Q(X,Y,Z) = aX^2 + bXY + cY^2 + dXZ + eYZ + fZ^2
 \]
 Miles Reid recommends thinking about this as a bijection $q \leftrightarrow Q$ by
 \[
-q(x,y) = Q(\frac{X}{Z},\frac{Y}{Z})
+q(x,y) = Q(\frac{X}{Z},\frac{Y}{Z},\frac{Z}{Z}),~Z\ne 0
 \]
+Thus, a conic in $\mathbb{P}^2$ would be determined by the zeroes of $Q$.
 
 \begin{mydef}
 A \emph{Projective Transformation} on $\mathbb{P}^2_\mathbb{R}$ is a
@@ -128,7 +129,7 @@ More explicitly, if we restrict ourselves to $\mathbb{R}^2 \subset \mathbb{P}^2_
 \begin{bmatrix}
 x\\
 y
-\end{bmatrix} =
+\end{bmatrix} \mapsto
 (A\begin{bmatrix}
 x\\
 y
