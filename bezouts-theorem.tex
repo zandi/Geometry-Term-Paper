@@ -112,7 +112,7 @@ Similarly, a non-degenerate conic can be parameterized as follows
 X=a(U,V),~Y=b(U,V),~Z=c(U,V)
 \]
 where $a,b,c$ are quadratic forms in $U,V$. This is because $C$ is a projective
-transformation of $XZ=Y^2$, which is parametrically $(X,Y,Z) = (U^2,UV,V^2)$.
+transformation of $XZ=Y^2$, which is can be parameterized by $(X,Y,Z) = (U^2,UV,V^2)$.
 Thus, $C$ is given by 
 \[
 \begin{bmatrix}
@@ -128,7 +128,8 @@ UV\\
 V^2
 \end{bmatrix}
 \]
-Where $M$ is a non-singular 3x3 matrix. (JUSTIFY THIS!!!)
+Where $M$ is a non-singular 3x3 matrix. Hence, $C$ can be parameterized by
+quadratic forms $a, b, c$ in $U,V$.
 
 So, in order to find the points of intersection of $L$ (resp. $C$) with $D$,
 we simply need to evaluate $G_d|_L=0$ (resp. $G_d|_C=0$) using the above parameterizations.
@@ -137,5 +138,17 @@ Explicitly, to find the points of $L \cap D$ we want to find the solutions to
 	G_d(a(U,V),b(U,V),c(U,V)) = 0
 \]
 Now we can see that, as $G_d$ is a form of degree $d$ in $X,Y,Z$, and $a,b,c$ are forms
-of degree 1 (resp. 2) in $U,V$ then $G_d|_L$ is of degree $d$ (resp. 2d) in $U,V$.
+of degree 1 (resp. 2) in $U,V$ then by composition $G_d|_L$ is of degree $d$ (resp. 2d) in $U,V$.
+
+Now, if $k$ is algebraically closed, then $G_d \in k[X,Y,Z]$ and so all roots of $G_d|_L$ are
+elements $(U, V)$ of $k \times k$. Likewise, all roots of $G_d|_C$ are elements of $k \times k$.
+Thus, accounting for multiplicities and points at infinity, $G_d|_L$ has precisely $d$ roots in 
+$(U, V)$ and $G_d|_C$ has precisely $2d$ roots in $(U, V)$.
+Using the parameterizations $a, b, c$ we can easily find the corresponding
+roots in $\mathbb{P}^2_k$.
+
+Thus, accounting for multiplicities of zeroes and points at infinity,
+the intersection $L \cap D$ has $d$ elements, and the intersection
+$C \cap D$ has $2d$ elements. Thus, the curve $L$ (resp. $C$) meets $D$ in
+precisely $d$ (resp. $2d$) points.
 \end{proof}
