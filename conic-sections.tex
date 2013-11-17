@@ -1,5 +1,82 @@
 \section{Conic Sections}
 
-Use conic sections to illustrate some basics here
-and provide necessary theorems/tools for elliptic curve
-section. Will draw heavily from the book
+\begin{mydef}
+A \emph{Conic} in $\mathbb{R}^2$ is a plane curve given by the quadratic
+equation
+\[
+q(x,y) = ax^2 + bxy + cy^2 + dx + ey + f = 0
+\]
+\end{mydef}
+
+To ``adapt" this definition into projective space $\mathbb{P}^2$, we simply
+note that the inhomogenous polynomial $q$ has an associated
+homogenous polynomial 
+\[
+Q(X,Y,Z) = aX^2 + bXY + cY^2 + dXZ + eYZ + fZ^2
+\]
+Miles Reid recommends thinking about this as a bijection $q \leftrightarrow Q$ by
+\[
+q(x,y) = Q(\frac{X}{Z},\frac{Y}{Z},\frac{Z}{Z}),~Z\ne 0
+\]
+Thus, a conic in $\mathbb{P}^2$ would be determined by the zeroes of $Q$.
+
+\begin{theorem}
+Let $k$ be any field of characteristic $\ne 2$. Then, any quadratic form $Q$
+in $(X,Y,Z)$ has an associated $3 \times 3$ symmetric matrix $A$ s.t.
+\[
+x^TAx =  Q(X,Y,Z),~x=\begin{bmatrix}
+x\\
+y\\
+z
+\end{bmatrix}
+\]
+explicitly, if 
+\[
+Q(X,Y,Z) = aX^2 + 2bXY + cY^2 + 2dXZ + 2eYZ + fZ^2
+\]
+Then
+\[
+A = \begin{bmatrix}
+a & b & d\\
+b & c & e\\
+d & e & f
+\end{bmatrix}
+\]
+and the quadratic form (and hence the conic it defines) is non-degenerate
+if the matrix $A$ is non-degenerate (non-singular).
+\end{theorem}
+
+Note that the matrix $A$ from the above theorem is symmetric. Thus, we can
+apply the Spectral Theorem to see that we can diagonalize it using some
+orthogonal matrix. This effectively allows us to transform any non-degenerate 
+quadratic form into a homogenous quadratic form through a change of basis.
+
+\begin{theorem}
+Let $Q$ be a quadratic form of $X, Y, Z$. Then, there exists a change of basis $(X,Y,Z) \mapsto (X',Y',Z')$ s.t.
+$Q(X,Y,Z) = Q'(X',Y',Z')$ where
+\[
+Q'(X',Y',Z') = \lambda_1 X'^2 + \lambda_2 Y'^2 + \lambda_3 Z'^2
+\]
+As a corollary, all non-degenerate conics in $\mathbb{P}^2$ are projectively
+equivalent to the conic defined by $XZ = Y^2$. That is, there is some
+projective transformation which takes an arbitrary conic $C$ to the conic 
+defined by $XZ = Y^2$.
+\end{theorem}
+\begin{proof}
+$Q$ is a quadratic form,
+thus $Q$ has an associated symmetric matrix 
+$A$ s.t. $Q(x) = x^TAx$. As $A$ is symmetric, the Spectral Theorem gives that
+\[
+\exists P:~P\text{ orthogonal},~P^TAP\text{ is diagonal}
+\]
+and in fact, the diagonal entries of $B=P^TAP$ are the eigenvalues of $A$. Thus,
+it is easy to show, using the transformation $x=Px'$, that
+\[
+Q(X,Y,Z) = x^TAx = (Px')^TAPx' = x'^TP^TAPx' = x'^TBx'
+\]
+Now, letting the eigenvalues of $A$ be $\lambda_1, \lambda_2, \lambda_3$ we see that
+\[
+x'^TBx' = \lambda_1 X'^2 + \lambda_2 Y'^2 + \lambda_3 Z'^2 = Q'(X',Y',Z')
+\]
+Thus, $Q(X,Y,Z) = Q'(X',Y',Z')$.
+\end{proof}
