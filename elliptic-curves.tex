@@ -1,5 +1,19 @@
 \section{Elliptic Curves}
 
+One of the more beautiful applications of algebra to
+geometry can be seen on elliptic curves. Here, it is in
+fact possible to form a group using points on non-singular
+cubic curves. Where previous material was primarily focused
+with algebra \emph{of} geometric structures, homogenous
+polynomials and projective space, now we focus on 
+algebra \emph{on} a geometric structure. This is similar to
+the definition of the Dihedral group in that the
+structure of the object in question is fundamental to the
+structure of the group, but the group on the elliptic curve
+is more complicated. We'll begin by stating some theorems
+which will be used to prove that the structure which
+arises is indeed a group.
+
 \begin{theorem}
 \label{thm:cubicintersectionpoints}
 Let $k$ be an infinite field, and let $p_1, \dots, p_8 \in \mathbb{P}^2_k$
@@ -8,9 +22,9 @@ collinear, and no 7 lie on a non-degenerate conic (no 7 are con-conic). Then:
 \[
 	\dim S_3(p_1, \dots, p_8) = 2
 \]
-That is, the set of all conics which pass through $p_1, \dots, p_8$ can in
+That is, the set of all cubics which pass through $p_1, \dots, p_8$ can in
 fact be considered a vector space, with a basis of the defining equations $F_1, F_2$
-of the 2 conic curves. Thus
+of the 2 cubic curves. Thus
 \[
 	D \in S_3(p_1, \dots, p_8) \implies \exists \alpha, \beta : D = \alpha F_1 + \beta F_2
 \]

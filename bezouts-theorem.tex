@@ -1,5 +1,19 @@
 \section{Bezout's Theorem}
 
+One of the most beautiful and powerful theorems in
+algebraic geometry is Bezout's Theorem. With it we
+can very precisely link the intersections of 
+geometric structures with the degree of their
+defining forms, and characterize their intersection.
+This is quite useful in proofs, as various kinds
+of intersections occur quite frequently. To start,
+we'll explore some of the properties of homogenous
+forms in 2 variables, and the explicit connection
+between these forms and their associated non-homogenous 
+polynomials. It may be useful here to consider
+the plane $Z=1$ when in $\mathbb{P}^2$, and the line
+$V=1$ when in $\mathbb{P}^1$.
+
 \begin{theorem}
 \emph{Homogenous Forms in 2 Variables}:\\
 
@@ -27,7 +41,7 @@ Exploring this further, for some $\alpha \in k$
 f(a) = 0 \iff (u-a)|f(u) \iff (U-\alpha V) | F(U,V)
 \]
 As $f$ must contain at least a linear term whose root is $a$, and
-thus applying $u=U/V$, we get $(U/V - a) = (U - \alpha V)$. Now, 
+thus applying $u=U/V$, we get $(U/V - a)$ and thus $(U - \alpha V)$. Now, 
 holding $V=1$ like earlier, we see that
 \[
 (U-\alpha V) | F(U,V) \iff F(\alpha,1) = 1
@@ -149,3 +163,20 @@ the intersection $L \cap D$ has $d$ elements, and the intersection
 $C \cap D$ has $2d$ elements. Thus, the curve $L$ (resp. $C$) meets $D$ in
 precisely $d$ (resp. $2d$) points.
 \end{proof}
+
+Now, we formally know that given two distinct lines in $\mathbb{P}^2$, they will intersect in
+precisely one point. Likewise, the intersection of a line with a conic that doesn't
+contain it will have precisely $2$ points. This is a useful tool when combined with
+examining the dimension of $S_d$. For example, the intersection of any two
+conics $C_1,~C_2$ has $4$ points, so given $5$ points, what do
+we know about the conics which lie on them? If no $4$ of these $5$ points
+are collinear, then in fact there is only one conic $C$ which passes
+through all of them. This can be shown by assuming the contrary;
+that two distinct conics pass through such $5$ points; and then examining
+the intersection of these conics. Another interesting consequence
+is that, with distinct $p_0, \dots, p_n \in \mathbb{P}^2_\mathbb{R}$, then
+$\dim S_2(p_0, \dots, p_n) \ge 6 - n$. This can be seen by considering
+some $Q \in S_2(p_0, \dots, p_n)$, and treating each of $Q(p_i) = 0$ as
+a linear equation in $6$ coefficients, since each $p_i$ is fixed. Then we 
+have a system of $n$ equations in $6$ variables, and we can easily apply
+linear algebra techniques.

@@ -1,5 +1,18 @@
 \section{Basics}
 
+The undergraduate math student would be well prepared for this paper with
+prior experience in algebra, linear algebra and geometry.
+However, there are still various concepts and terms which
+may be unfamiliar.
+These will be briefly discussed here before the main content, which will make heavy
+use of them. Note that a central concept to algebraic geometry,
+the \emph{variety}, is not covered here, nor elsewhere in this paper.
+It seems to be abstract enough that such introductory materials
+don't bother with it. Despite this, the following should provide 
+enough background for the following sections. Let's begin with
+what is surely the most widely used and foundational concept;
+\emph{Projective Space}.
+
 \begin{mydef}
 Given a Field $k$, the $\emph{Projective Space of Degree n over k}$, denoted $\mathbb{P}^n_k$
 is the quotient $(k^{n+1} \setminus \{\bold{0}\}) / \sim$, where $\sim$ is the equivalence relation 
@@ -15,7 +28,7 @@ $[ y_0: ... : y_n ] = P = [ x_0 : ... : x_n ]$ if $(y_0, ..., y_n) \sim (x_0, ..
 The definition is abstract to purposely highlight the fact that, 
 given a field $k$ we can create a projective space.
 Effectively, the projective space is the set of all lines in 
-$k^n$ through the origin. This is also why the projective space
+$k^{n+1}$ through the origin. This is also why the projective space
 has one fewer dimension than its corresponding vector space.
 
 So, the ``points" in projective space are lines in the corresponding
@@ -39,8 +52,8 @@ $p$ and the origin $(0, 0, 0)$ intersects the specified hemisphere
 precisely once at some point $q$. Knowing this, we can see that lines
 on our plane $z=1$ are mapped to great circles on our sphere. In the
 case of two parallel lines, they will never intersect in $z=1$, but
-the great circles they're mapped to will intersect on the equator of 
-the hemisphere.
+the great circles they're mapped to will approach a point of intersection
+on the equator of the hemisphere.
 
 \begin{mydef}
 A function $f(x)$ is \emph{Homogenous of Degree n} if, for some 
@@ -71,7 +84,8 @@ So, $S_d$ has a basis of
 &X^{d-1}Z, X^{d-2}YZ, X^{d-3}Y^2Z, \dots\\
 &X^{d-2}Z^2, X^{d-3}YZ^2, X^{d-4}Y^2Z^2, \dots\\
 \vdots\\
-&\}
+&XZ^{d-1},YZ^{d-1}\\
+&Z^d\}
 \end{align*}
 Also, it can be seen that $\dim S_d = {d+2 \choose 2}$. On its own
 $S_d$ isn't incredibly interesting, but we can make use of it when
@@ -83,6 +97,11 @@ for $p_1, \dots, p_n \in \mathbb{P}^2$, let
 	S_d(p_1, \dots, p_n) = \{ F \in S_d :~F(p_i) = 0,~i=1,\dots,n\}
 \]
 \end{mydef}
+Here, for example, we can augment $S_d$ with specific points to define
+a set of all forms which are zero at those points. As we will see, zeroes of forms
+define geometric figures, so reasoning about forms in these sets
+is very useful for considering various kinds of intersections, an important
+tool for various proofs.
 
 \begin{mydef}
 A \emph{line} in $\mathbb{P}^2$ is defined as the points for which
@@ -91,6 +110,14 @@ some linear form $aX + bY + cZ$ is zero. This is notated
 L:(aX+bY+cZ=0)
 \]
 \end{mydef}
+
+As an example, consider $S_1$, the set of all linear forms in $\mathbb{R}^3$.
+If $F \in S_1$ then $F = aX + bY + cZ$, so consider $L:(F=0)$, and examine
+some point $p_0 = (X_0,Y_0,Z_0) \in L$ with $X_0 \ne 0, Y_0 \ne 0, Z_0 \ne 0$.
+$p_0 \in L$ so $F(p_0) = aX_0 + bY_0 + cZ_0 = 0$, which
+is a linear equation in 3 variables. None of the coefficients of $p_0$ are zero,
+so we can easily determine one of our coefficients is dependent
+on the others, thus, $S_1(p_0) \cong \mathbb{R}^2$, hence $\dim S_1(p_0) = 2$.
 
 \begin{mydef}
 A \emph{Projective Transformation} on $\mathbb{P}^2_\mathbb{R}$ is a
