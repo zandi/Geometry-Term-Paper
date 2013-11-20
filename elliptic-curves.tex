@@ -85,7 +85,7 @@ Now, fix any point $O \in \mathfrak{C}$ and make the following construction:
 \end{align*}
 \end{mydef}
 
-Geometrically, the uniqueness in (b) says that $\mathfrak{C}$ should be non-singular,
+Geometrically, the uniqueness in (b) says that $\mathfrak{C}$ should be non-singular (no cusps, self-intersections),
 and we can see that this line $L$ is in fact the tangent line to $\mathfrak{C}$ at $P$.
 Likewise, (a) prevents somewhat degenerate cases.
 
@@ -173,14 +173,13 @@ M_1: \overleftrightarrow{BCQ},~M_2: \overleftrightarrow{QO\bar{Q}},~M_3: \overle
 \]
 
 Clearly, $(A+B)+C = A+(B+C) \iff \bar{S}=\bar{S'} \iff S=S'$. We'll prove $S=S'$ by inspecting the two cubics
+%don't use this notation, since I can't find a satisfactory definition of "+" in this context.
+%\[
+%	D_1 = L_1 + M_2 + L_3 \text{ and } D_2 = M_1 + L_2 + M_3
+%\]
 \[
-	D_1 = L_1 + M_2 + L_3 \text{ and } D_2 = M_1 + L_2 + M_3
+	D_1 = L_1 \cup M_2 \cup L_3 \text{ and } D_2 = M_1 \cup L_2 \cup M_3
 \]
-TODO: \emph{clearly} define what this ``$+$" operation on curves is. are we
-taking the product of their defining polynomials? I suspect so, but
-this definition raises other concerns on the applicability of other theorems,
-such as ``if two cubics intersect 8 of 9 common points they both intersect the 9th".
-study this later...\\
 
 Thus, by construction we have
 \[
@@ -192,7 +191,7 @@ and
 \]
 
 Now, assuming all 9 points of $\mathfrak{C} \cap D_1$ are distinct, then $\mathfrak{C}$ and $D_1$
-satisfy the conditions of proposition 2.7 (TODO: add prop. 2.7 from book to earlier sections),
+satisfy the conditions of theorem \ref{pthm:cubicintersectionpoints},
 so $D_2$ must pass through the 9th point $S$, which is only possible if $S'=S$.
 Hence, $\bar{S} = \bar{S'}$ and, so long as our construction involves 9 distinct points,
 $+$ is Associative.
